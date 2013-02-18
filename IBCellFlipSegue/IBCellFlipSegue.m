@@ -1,22 +1,25 @@
 //
-//  IBCellFlipSegue.m
+//  IBCellFlipSegue.h
 //  CellFlip
 //
 //  Created by Itamar Biton on 1/25/13.
 //  Copyright (c) 2013 IBlabs. All rights reserved.
 //
+//  Copyright 2013 Itamar Biton
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 
-typedef enum {
-    FlipDirectionForward = 1,
-    FlipDirectionBackwards = -1
-} FlipDirection;
-
-typedef enum {
-    FlipTypeFlip,
-    FlipTypeUnflip
-} FlipType;
-
-#define kTransitionDuration     0.4
+#define kTransitionDuration     0.5
 
 #import "IBCellFlipSegue.h"
 
@@ -60,6 +63,7 @@ typedef enum {
     CGPoint destPosition = CGPointMake(160, 250);
     CGSize destSize = CGSizeMake(320, 460);
     FlipType cellFlipType = FlipTypeFlip;
+    FlipDirection flipDirection = (animatedCellLayer.position.y > 230) ? FlipDirectionBackwards : FlipDirectionForward;
     
     // Create the required animations.
     CABasicAnimation *cellResizeAnimation = [self createResizeAnimationFromSize:animatedCellLayer.bounds.size
@@ -78,7 +82,7 @@ typedef enum {
     
     // Create the cell's flip animation.
     CABasicAnimation *cellFlipAnimation = [self createFlipAnimationWithFlipType:cellFlipType
-                                                                      direction:FlipDirectionForward
+                                                                      direction:flipDirection
                                                                     andDuration:(kTransitionDuration / 2)];
     cellFlipAnimation.removedOnCompletion = NO;
     cellFlipAnimation.fillMode = kCAFillModeForwards;
@@ -139,7 +143,7 @@ typedef enum {
     
     // Create the layer's flip animation.
     CABasicAnimation *layerFlipAnimation = [self createFlipAnimationWithFlipType:layerFlipType
-                                                                       direction:FlipDirectionForward
+                                                                       direction:flipDirection
                                                                      andDuration:(kTransitionDuration / 2)];
     layerFlipAnimation.removedOnCompletion = NO;
     layerFlipAnimation.fillMode = kCAFillModeForwards;
@@ -296,9 +300,32 @@ typedef enum {
     
     // If this is an 'unflip' animation, the direction of the flip should be reversed.
     CGFloat flipAngle = (flipType == FlipTypeFlip) ? M_PI_2 * direction * (-1) : M_PI_2 * direction;
-    CATransform3D flippedTransform = CATransform3DRotate(skewedIdentityTransform,
-                                                         flipAngle,
-                                                         1, 0, 0);
+    
+    // Set the flip axis based on the set axis.
+    CATransform3D flippedTransform = CATransform3DIdentity;
+    switch (self.flipAxis) {
+        case FlipAxisHorizontal:
+            flippedTransform = CATransform3DRotate(skewedIdentityTransform,
+                                                   flipAngle,
+                                                   1, 0, 0);
+            break;
+            
+        case FlipAxisVertical:
+            flippedTransform = CATransform3DRotate(skewedIdentityTransform,
+                                                   flipAngle,
+                                                   0, 1, 0);
+            break;
+            
+        case FlipAxisDiagonal:
+            flippedTransform = CATransform3DRotate(skewedIdentityTransform,
+                                                   flipAngle,
+                                                   1, 1, 0);
+            break;
+            
+        default:
+            break;
+    }
+    
     NSValue *valueIdentityTransform = [NSValue valueWithCATransform3D:skewedIdentityTransform];
     NSValue *valueFlippedTransform = [NSValue valueWithCATransform3D:flippedTransform];
     
