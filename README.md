@@ -6,6 +6,7 @@ IBCellFlipSegue
 Installation
 ---------------
 To use IBCellFlipSegue in your project, simply follow these steps:
+
 1.	Clone the IBCellFlipSegue repository, either as a submodule or into a folder on your computer.
 2.	Add IBCellFlipSegue folder into your project.
 3.	Import IBCellFlipSegue where you need it in your project by adding `#import IBCellFlipSegue.h` to the header file.

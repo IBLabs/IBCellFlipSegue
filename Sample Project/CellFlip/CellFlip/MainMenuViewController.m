@@ -47,6 +47,7 @@
     {
         IBCellFlipSegue *cellFlipSegue = (IBCellFlipSegue *)segue;
         cellFlipSegue.selectedCell = sender;
+        cellFlipSegue.flipAxis = FlipAxisHorizontal;
     }
 }
 
