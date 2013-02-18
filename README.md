@@ -26,8 +26,4 @@ To use the IBCellFlipSegue, follow these simple steps:
         IBCellFlipSegue *cellFlipSegue = (IBCellFlipSegue *)segue;
 
 6.  Set the segues `selectedCell` property to the button/cell that should be flipped.
-7.  **Optional:** Set the direction/type of the flip by settings the segue's `flipAxis` property to one of the following:
-
-*    `FlipAxisHorizontal`
-*    `FlipAxisVertical`
-*    `FlipAxisDiagonal`
+7.  **Optional:** Set the direction/type of the flip by settings the segue's `flipAxis` property to one of the following: `FlipAxisHorizontal`, `FlipAxisVertical`, `FlipAxisDiagonal`.
