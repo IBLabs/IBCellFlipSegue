@@ -23,4 +23,4 @@ To use the IBCellFlipSegue, follow these simple steps:
 4.  In the source view controller's implementation file (.m) implement the `prepareForSegue:sender:` method of the view controller.
 5.  Convert the segue to an IBCellFlipSegue like so:
 
-    IBCellFlipSegue *cellFlipSegue = (IBCellFlipSegue *)segue;
+        IBCellFlipSegue *cellFlipSegue = (IBCellFlipSegue *)segue;
