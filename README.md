@@ -15,22 +15,22 @@ The use of *IBCellFlipSegue* requires:
 Installation
 ---------------
 
-To setup IBCellFlipSegue in your project, simply follow these steps:
+To setup *IBCellFlipSegue* in your project, simply follow these steps:
 
-1.  Clone the IBCellFlipSegue repository, either as a submodule or into a folder on your computer.
-2.  Add IBCellFlipSegue folder into your project.
-3.  Import IBCellFlipSegue where you need it in your project by adding `#import IBCellFlipSegue.h` to the header file.
+1.  Clone the *IBCellFlipSegue* repository, either as a submodule or into a folder on your computer.
+2.  Add *IBCellFlipSegue* folder into your project.
+3.  Import *IBCellFlipSegue* where you need it in your project by adding `#import IBCellFlipSegue.h` to the header file.
 
 How To Use
 ---------------
 
-To use the IBCellFlipSegue, follow these simple steps:
+To use the *IBCellFlipSegue*, follow these simple steps:
 
 1.  Inside your app's storyboard file, create a custom segue between the views you want to transition.
 2.  Using the Attributes Inspector, the the Segue Class field to `IBCellFlipSegue`.
 3.  **Optional:** In case the source view controller (the view controller you are transitioning from) has more than one segue, give the segue an identifier.
 4.  In the source view controller's implementation file (.m) implement the `prepareForSegue:sender:` method of the view controller.
-5.  Convert the segue to an IBCellFlipSegue like so:
+5.  Convert the segue to an *IBCellFlipSegue* like so:
 
         IBCellFlipSegue *cellFlipSegue = (IBCellFlipSegue *)segue;
 
