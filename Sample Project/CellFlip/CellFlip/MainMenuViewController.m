@@ -12,6 +12,8 @@
 
 #import "MainMenuViewController.h"
 
+#import "MainMenuCell.h"
+
 @interface MainMenuViewController ()
 
 @end
@@ -47,7 +49,7 @@
     {
         IBCellFlipSegue *cellFlipSegue = (IBCellFlipSegue *)segue;
         cellFlipSegue.selectedCell = sender;
-        cellFlipSegue.flipAxis = FlipAxisHorizontal;
+        cellFlipSegue.flipAxis = FlipAxisVertical;
     }
 }
 
@@ -62,14 +64,13 @@
 {
     static NSString *mainMenuCellIdentifier = @"MainMenuCellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:mainMenuCellIdentifier];
+    MainMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:mainMenuCellIdentifier];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mainMenuCellIdentifier];
+        cell = [[MainMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mainMenuCellIdentifier];
     }
     
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_background.jpg"]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;

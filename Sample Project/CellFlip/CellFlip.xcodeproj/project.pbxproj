@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2DC51816D2C344006849A6 /* MainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DC51716D2C344006849A6 /* MainMenuCell.m */; };
 		0EB694EE16B2B7A200AF21B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB694ED16B2B7A200AF21B3 /* UIKit.framework */; };
 		0EB694F016B2B7A200AF21B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB694EF16B2B7A200AF21B3 /* Foundation.framework */; };
 		0EB694F216B2B7A200AF21B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB694F116B2B7A200AF21B3 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2DC51616D2C344006849A6 /* MainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuCell.h; sourceTree = "<group>"; };
+		0E2DC51716D2C344006849A6 /* MainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuCell.m; sourceTree = "<group>"; };
 		0EB694E916B2B7A200AF21B3 /* CellFlip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellFlip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB694ED16B2B7A200AF21B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0EB694EF16B2B7A200AF21B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2DC51516D2C326006849A6 /* MainMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E2DC51616D2C344006849A6 /* MainMenuCell.h */,
+				0E2DC51716D2C344006849A6 /* MainMenuCell.m */,
+			);
+			name = MainMenuCell;
+			sourceTree = "<group>";
+		};
 		0EB694DE16B2B7A200AF21B3 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +172,7 @@
 		0EB6951716B2BA8300AF21B3 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				0E2DC51516D2C326006849A6 /* MainMenuCell */,
 				0EB6951816B2BA8A00AF21B3 /* IBCellFlipSegue */,
 			);
 			name = Subclasses;
@@ -254,6 +267,7 @@
 				0EB6950E16B2B7D600AF21B3 /* MainMenuViewController.m in Sources */,
 				0EB6951116B2B98E00AF21B3 /* DetailsViewController.m in Sources */,
 				0EB6951B16B2BAB400AF21B3 /* IBCellFlipSegue.m in Sources */,
+				0E2DC51816D2C344006849A6 /* MainMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
