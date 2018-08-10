@@ -28,7 +28,7 @@ How To Use
 To use the *IBCellFlipSegue*, follow these simple steps:
 
 1.  Inside your app's storyboard file, create a custom segue between the views you want to transition.
-2.  Using the Attributes Inspector, the the Segue Class field to `IBCellFlipSegue`.
+2.  Using the Attributes Inspector, the Segue Class field to `IBCellFlipSegue`.
 3.  **Optional:** In case the source view controller (the view controller you are transitioning from) has more than one segue, give the segue an identifier.
 4.  In the source view controller's implementation file (.m) implement the `prepareForSegue:sender:` method of the view controller.
 5.  Convert the segue to an *IBCellFlipSegue* like so:
